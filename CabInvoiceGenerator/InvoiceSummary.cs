@@ -9,6 +9,11 @@ namespace CabInvoiceGenerator
         private int numberOfRides;
         private double totalFare;
         private double averageFare;
+        /// <summary>
+        /// constructor of class InvoiceSummary with 2 parameters
+        /// </summary>
+        /// <param name="numberOfRides"></param>
+        /// <param name="totalFare"></param>
         public InvoiceSummary(int numberOfRides, double totalFare)
         {
             this.numberOfRides = numberOfRides;

@@ -21,5 +21,18 @@ namespace Cab_Invoice_Generator_Test
             double expected = 25;
             Assert.AreEqual(expected, fare);
         }
+
+        /// <summary>
+        /// Test Case_2 The InvoiceSummery Should Return Total Fare InvoiceSummary for multiple Rides.
+        /// </summary>
+        [Test]
+        public void GivenMultipleRides_UsingInvoiceSummary_ShouldReturnInvoiceSummary()
+        {
+            invoiceGenerator = new InvoiceGenerator(RideType.NORMAL);
+            Ride[] rides = { new Ride(2.0, 5), new Ride(0.1, 1) };
+            InvoiceSummary summary = invoiceGenerator.CalculateFare(rides);
+            InvoiceSummary expectedSummary = new InvoiceSummary(2, 30.0);
+            Assert.AreEqual(expectedSummary, summary);
+        }
     }
 }
